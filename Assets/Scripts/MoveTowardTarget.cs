@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 [RequireComponent(typeof(CharacterController))]
 public class MoveTowardTarget : MonoBehaviour
@@ -13,7 +14,9 @@ public class MoveTowardTarget : MonoBehaviour
     [SerializeField] private bool charMove = true;
 
     private CharacterController controller;
+    private NavMeshAgent agent;
 
+    
     private void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -21,7 +24,8 @@ public class MoveTowardTarget : MonoBehaviour
         {
             controller.enabled = false;
         }
-        
+        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        agent.destination = target.position; 
     }
 
     public void SetMovingActive(bool active)
@@ -36,6 +40,8 @@ public class MoveTowardTarget : MonoBehaviour
 
     void Update()
     {
+        agent.destination = target.position; 
+        /*
         if(!movingActive || target == null) { return; }
         Vector3 towardTarget = target.position - transform.position;
         // Move toward target until certain distance to target is reached.
@@ -53,5 +59,7 @@ public class MoveTowardTarget : MonoBehaviour
             }
             //controller.Move(Time.deltaTime * towardTarget  * moveSpeed);
         }
+        */
+        
     }
 }
