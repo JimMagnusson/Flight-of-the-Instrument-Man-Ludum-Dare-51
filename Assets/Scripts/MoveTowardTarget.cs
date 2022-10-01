@@ -10,8 +10,10 @@ public class MoveTowardTarget : MonoBehaviour
     [SerializeField] private float moveSpeed = 1f;
     [SerializeField] private float stopDistanceToTarget = 1f;
     [SerializeField] private bool movingActive = true;
+    [SerializeField] private bool wheels = true;
+   
 
-    //private CharacterController controller;
+    private WheelRotator _wheelRotator;
     private NavMeshAgent agent;
 
     
@@ -19,6 +21,9 @@ public class MoveTowardTarget : MonoBehaviour
     {
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         agent.destination = target.position; 
+        if(wheels) {
+            _wheelRotator = GetComponent<WheelRotator>();
+        }
     }
 
     public void SetMovingActive(bool active)
@@ -33,26 +38,12 @@ public class MoveTowardTarget : MonoBehaviour
 
     void Update()
     {
-        agent.destination = target.position; 
-        /*
-        if(!movingActive || target == null) { return; }
-        Vector3 towardTarget = target.position - transform.position;
-        // Move toward target until certain distance to target is reached.
-        if(towardTarget.magnitude > stopDistanceToTarget)
-        {
-            towardTarget.Normalize();
-            if (charMove)
-            {
-                towardTarget.y = 0;
-                controller.Move(Time.deltaTime * towardTarget  * moveSpeed);
-            }
-            else
-            {
-                transform.position += new Vector3(towardTarget.x * moveSpeed * Time.deltaTime, 0, towardTarget.z * moveSpeed * Time.deltaTime);
-            }
-            //controller.Move(Time.deltaTime * towardTarget  * moveSpeed);
+        if(wheels) {
+            _wheelRotator.RotateWheels(true, moveSpeed);
         }
-        */
-        
+        if(!movingActive) {
+            return;
+        }
+        agent.destination = target.position; 
     }
 }
