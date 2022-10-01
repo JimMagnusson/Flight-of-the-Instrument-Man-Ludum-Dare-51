@@ -4,26 +4,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-[RequireComponent(typeof(CharacterController))]
 public class MoveTowardTarget : MonoBehaviour
 {
     [SerializeField] private Transform target;
     [SerializeField] private float moveSpeed = 1f;
     [SerializeField] private float stopDistanceToTarget = 1f;
     [SerializeField] private bool movingActive = true;
-    [SerializeField] private bool charMove = true;
 
-    private CharacterController controller;
+    //private CharacterController controller;
     private NavMeshAgent agent;
 
     
     private void Start()
     {
-        controller = GetComponent<CharacterController>();
-        if (!charMove)
-        {
-            controller.enabled = false;
-        }
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         agent.destination = target.position; 
     }
