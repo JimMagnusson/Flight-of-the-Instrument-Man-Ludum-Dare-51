@@ -14,8 +14,9 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private float walkingThreshold = 0.5f;
     
-    //private Health health;
+    private Health health;
     private Animator animator;
+    
     private MovementType movementType = MovementType.idle;
 
     private PlayerControls playerControls;
@@ -23,6 +24,8 @@ public class PlayerController : MonoBehaviour
     private CharacterController controller;
 
     private Quaternion targetRotation;
+
+    private WheelRotator _wheelRotator;
     
     private void Awake() {
         playerControls = new PlayerControls();
@@ -38,10 +41,12 @@ public class PlayerController : MonoBehaviour
     
     void Start()
     {
-        //health = GetComponent<Health>();
+        health = GetComponent<Health>();
         animator = GetComponent<Animator>();
         
         controller = GetComponent<CharacterController>();
+
+        _wheelRotator = GetComponent<WheelRotator>();
     }
     // Update is called once per frame
     void Update()
@@ -50,11 +55,12 @@ public class PlayerController : MonoBehaviour
 
         Vector3 move = new Vector3(input.x, 0, input.y);
         
-        controller.Move(move * Time.deltaTime * moveSpeed);
-        
         // Rotate player
         if(input.magnitude > 0)
         {
+            controller.Move(move * Time.deltaTime * moveSpeed);
+            _wheelRotator.RotateWheels(true, input.magnitude * moveSpeed);
+            
             //Adding these vectors together will result in a position in the world, that is around your player.
             Vector3 goal = move + transform.position;
 
