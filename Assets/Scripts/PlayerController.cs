@@ -4,7 +4,7 @@ using UnityEngine;
 
 public enum MovementType { idle, walking, running}
 
-//[RequireComponent(typeof(Health))]
+[RequireComponent(typeof(Health))]
 [RequireComponent(typeof(Animator))]
 public class PlayerController : MonoBehaviour
 {
