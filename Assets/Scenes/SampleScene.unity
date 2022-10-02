@@ -1112,6 +1112,34 @@ PrefabInstance:
       objectReference: {fileID: 920843925}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ae61eb33d20b3d4491d5f9dc24c8cf7, type: 3}
+--- !u!1 &522288570 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6290693653475998736, guid: 7ae61eb33d20b3d4491d5f9dc24c8cf7,
+    type: 3}
+  m_PrefabInstance: {fileID: 522288569}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &522288571 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5842282285760335655, guid: 7ae61eb33d20b3d4491d5f9dc24c8cf7,
+    type: 3}
+  m_PrefabInstance: {fileID: 522288569}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &522288572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522288570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 932142d3910d2a0488f3d24f086dd18c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wheels: {fileID: 522288571}
+  rotationSpeed: 5
+  axis: {x: 1, y: 0, z: 0}
+  active: 1
 --- !u!1 &535059342 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1429933577196500091, guid: 32899261bdd5aa94685a8538e85b73c6,
