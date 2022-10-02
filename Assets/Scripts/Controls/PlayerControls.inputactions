@@ -31,6 +31,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "AimController",
+                    "type": "Value",
+                    "id": "1900f433-3cb5-4a96-b66e-09aee264061c",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -179,12 +188,23 @@
                 },
                 {
                     "name": "",
-                    "id": "7bcff141-90f4-462b-b0de-d25bdde7e4ea",
-                    "path": "<Gamepad>/rightStick",
+                    "id": "163107fe-5042-4d8b-b5d4-58e2a33e7fb3",
+                    "path": "<Gamepad>/rightShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Aim",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9d84b15e-d046-470c-8afa-b3258a61ad2b",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -196,6 +216,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Aim",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4c92a954-78f6-4aac-8f35-28b575f9a80b",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AimController",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

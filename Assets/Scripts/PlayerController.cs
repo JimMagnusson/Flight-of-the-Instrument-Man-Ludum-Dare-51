@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public enum MovementType { idle, walking, running}
 
@@ -13,6 +14,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float rotationSpeed = 1f;
 
     [SerializeField] private float walkingThreshold = 0.5f;
+
+    [SerializeField] private Camera cam;
     
     private Health health;
     private Animator animator;
@@ -28,7 +31,7 @@ public class PlayerController : MonoBehaviour
     private WheelRotator _wheelRotator;
     
     private float startYVal;
-    
+
     private void Awake() {
         playerControls = new PlayerControls();
     }
@@ -43,7 +46,6 @@ public class PlayerController : MonoBehaviour
     
     void Start()
     {
-
         startYVal = transform.position.y;
         health = GetComponent<Health>();
         animator = GetComponent<Animator>();
@@ -56,17 +58,42 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         Vector2 input = playerControls.Standard.Move.ReadValue<Vector2>();
+        Vector3 aimInput = Vector3.zero;
+        
+
+        Vector2 aimControllerInput = playerControls.Standard.AimController.ReadValue<Vector2>();
+        Vector2 aimMouseInput = playerControls.Standard.Aim.ReadValue<Vector2>();
+        
+        if (aimMouseInput.magnitude > 0)
+        {
+            Vector3 mouseInput3 = new Vector3(aimMouseInput.x, aimMouseInput.y, 0);
+            Ray ray = cam.ScreenPointToRay(mouseInput3);
+            RaycastHit hit;
+            if(Physics.Raycast(ray, out hit))
+            {
+                Vector3 hitPointNew = new Vector3(hit.point.x, 0, hit.point.z);
+                Vector3 towardMouse = hitPointNew - transform.position;
+                towardMouse.Normalize();
+                aimInput = towardMouse;
+            }
+        }
+        
+        if (aimControllerInput.magnitude > 0)
+        {
+            aimInput = new Vector3(aimControllerInput.x, 0, aimControllerInput.y);
+        }
+        
+        if (aimInput != Vector3.zero)
+        {
+            //Rotate smoothly to this target:
+            targetRotation = Quaternion.LookRotation(aimInput);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
+        }
+        
+        // Movement part
 
         Vector3 move = new Vector3(input.x, 0, input.y);
         
-        /*
-        if (Mathf.Abs(transform.position.y - startYVal) > maxDiff)
-        {
-            move.y = transform.position.y - startYVal;
-        }
-        */
-        
-        // Rotate player
         if(input.magnitude > 0)
         {
             controller.Move(move * Time.deltaTime * moveSpeed);
@@ -75,12 +102,13 @@ public class PlayerController : MonoBehaviour
             
             //Adding these vectors together will result in a position in the world, that is around your player.
             Vector3 goal = move + transform.position;
-
-            //Now we create a target rotation, by creating a direction vector: (This would be just be inputVector in this case).
+            
+            /*
             targetRotation = Quaternion.LookRotation(goal - transform.position);
             
             //Rotate smoothly to this target:
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
+            */
         }
 
     }

@@ -53,6 +53,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""AimController"",
+                    ""type"": ""Value"",
+                    ""id"": ""1900f433-3cb5-4a96-b66e-09aee264061c"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -201,12 +210,23 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""7bcff141-90f4-462b-b0de-d25bdde7e4ea"",
-                    ""path"": ""<Gamepad>/rightStick"",
+                    ""id"": ""163107fe-5042-4d8b-b5d4-58e2a33e7fb3"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Aim"",
+                    ""action"": ""Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9d84b15e-d046-470c-8afa-b3258a61ad2b"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -220,6 +240,17 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""action"": ""Aim"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4c92a954-78f6-4aac-8f35-28b575f9a80b"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AimController"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -231,6 +262,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_Standard_Move = m_Standard.FindAction("Move", throwIfNotFound: true);
         m_Standard_Attack = m_Standard.FindAction("Attack", throwIfNotFound: true);
         m_Standard_Aim = m_Standard.FindAction("Aim", throwIfNotFound: true);
+        m_Standard_AimController = m_Standard.FindAction("AimController", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -293,6 +325,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Standard_Move;
     private readonly InputAction m_Standard_Attack;
     private readonly InputAction m_Standard_Aim;
+    private readonly InputAction m_Standard_AimController;
     public struct StandardActions
     {
         private @PlayerControls m_Wrapper;
@@ -300,6 +333,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         public InputAction @Move => m_Wrapper.m_Standard_Move;
         public InputAction @Attack => m_Wrapper.m_Standard_Attack;
         public InputAction @Aim => m_Wrapper.m_Standard_Aim;
+        public InputAction @AimController => m_Wrapper.m_Standard_AimController;
         public InputActionMap Get() { return m_Wrapper.m_Standard; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -318,6 +352,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Aim.started -= m_Wrapper.m_StandardActionsCallbackInterface.OnAim;
                 @Aim.performed -= m_Wrapper.m_StandardActionsCallbackInterface.OnAim;
                 @Aim.canceled -= m_Wrapper.m_StandardActionsCallbackInterface.OnAim;
+                @AimController.started -= m_Wrapper.m_StandardActionsCallbackInterface.OnAimController;
+                @AimController.performed -= m_Wrapper.m_StandardActionsCallbackInterface.OnAimController;
+                @AimController.canceled -= m_Wrapper.m_StandardActionsCallbackInterface.OnAimController;
             }
             m_Wrapper.m_StandardActionsCallbackInterface = instance;
             if (instance != null)
@@ -331,6 +368,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Aim.started += instance.OnAim;
                 @Aim.performed += instance.OnAim;
                 @Aim.canceled += instance.OnAim;
+                @AimController.started += instance.OnAimController;
+                @AimController.performed += instance.OnAimController;
+                @AimController.canceled += instance.OnAimController;
             }
         }
     }
@@ -340,5 +380,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
         void OnAim(InputAction.CallbackContext context);
+        void OnAimController(InputAction.CallbackContext context);
     }
 }
