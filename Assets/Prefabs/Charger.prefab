@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 2714689198114586733}
   - component: {fileID: 2714689198114586712}
   - component: {fileID: 2714689198114586723}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Charger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -246,7 +246,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 4
+  m_Speed: 6
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -445,10 +445,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -3059513526259405086, guid: f0493edec80dece4cb904de75a76a90a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f0493edec80dece4cb904de75a76a90a,
         type: 3}
       propertyPath: m_Name
       value: LD51DrumEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f0493edec80dece4cb904de75a76a90a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3548609625071157723, guid: f0493edec80dece4cb904de75a76a90a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0493edec80dece4cb904de75a76a90a, type: 3}

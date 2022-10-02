@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 277967347020356113}
   - component: {fileID: 1145309165859196306}
   - component: {fileID: 2714689197866364496}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Guitar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -244,8 +244,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.75
-  m_Speed: 6
-  m_Acceleration: 8
+  m_Speed: 7
+  m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
@@ -350,6 +350,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LD51GuitarEnemy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c3e776cbef2d5a141a68c70274344999,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3e776cbef2d5a141a68c70274344999, type: 3}
