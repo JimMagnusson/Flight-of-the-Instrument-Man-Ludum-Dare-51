@@ -97,7 +97,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 0.48720738
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -257,7 +257,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 1
+  m_BaseOffset: 1.6
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!65 &2714689197866364496
@@ -271,8 +271,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.2506618, y: 1.7699257, z: 0.96765065}
-  m_Center: {x: 0.006260872, y: 0.08681959, z: -0.1679964}
+  m_Size: {x: 1.2506618, y: 2.7443755, z: 0.96765065}
+  m_Center: {x: 0.0062608714, y: 0.57404757, z: -0.1679964}
 --- !u!1001 &1145309166511429008
 PrefabInstance:
   m_ObjectHideFlags: 0
