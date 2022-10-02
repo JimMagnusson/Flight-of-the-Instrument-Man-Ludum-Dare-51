@@ -92,10 +92,7 @@ public class Charger : MonoBehaviour
                 // Exit condition
                 if (Vector3.Distance(chargeStartPosition, transform.position) > chargeLength)
                 {
-                    _chargeState = ChargeState.normal;
-                    _moveTowardTarget.SetMovingActive(true);
-                    _navMeshAgent.enabled = true;
-                    chargeCooldownTimer = chargeCooldownTime;
+                    ExitCharge();
                 }
                 transform.position += chargeDirection * Time.deltaTime * chargeVelocity;
                 break;
@@ -117,6 +114,22 @@ public class Charger : MonoBehaviour
         if (chargeAudio != null)
         {
             _audioSource.PlayOneShot(chargeAudio);
+        }
+    }
+
+    private void ExitCharge()
+    {
+        _chargeState = ChargeState.normal;
+        _moveTowardTarget.SetMovingActive(true);
+        _navMeshAgent.enabled = true;
+        chargeCooldownTimer = chargeCooldownTime;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (_chargeState == ChargeState.charging)
+        {
+            ExitCharge();
         }
     }
 }

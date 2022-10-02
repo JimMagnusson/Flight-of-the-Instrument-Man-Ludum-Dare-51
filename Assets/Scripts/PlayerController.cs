@@ -27,6 +27,8 @@ public class PlayerController : MonoBehaviour
 
     private WheelRotator _wheelRotator;
     
+    private float startYVal;
+    
     private void Awake() {
         playerControls = new PlayerControls();
     }
@@ -41,6 +43,8 @@ public class PlayerController : MonoBehaviour
     
     void Start()
     {
+
+        startYVal = transform.position.y;
         health = GetComponent<Health>();
         animator = GetComponent<Animator>();
         
@@ -55,10 +59,18 @@ public class PlayerController : MonoBehaviour
 
         Vector3 move = new Vector3(input.x, 0, input.y);
         
+        /*
+        if (Mathf.Abs(transform.position.y - startYVal) > maxDiff)
+        {
+            move.y = transform.position.y - startYVal;
+        }
+        */
+        
         // Rotate player
         if(input.magnitude > 0)
         {
             controller.Move(move * Time.deltaTime * moveSpeed);
+            transform.position = new Vector3(transform.position.x, startYVal, transform.position.z);
             _wheelRotator.RotateWheels(true, input.magnitude * moveSpeed);
             
             //Adding these vectors together will result in a position in the world, that is around your player.
