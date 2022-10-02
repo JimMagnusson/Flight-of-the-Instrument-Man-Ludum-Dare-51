@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +6,8 @@ using UnityEngine;
 public enum SceneState
 {
     rock,
-    club
+    club,
+    chiptune
 }
 public class SceneSwitcher : MonoBehaviour
 {
@@ -18,6 +20,8 @@ public class SceneSwitcher : MonoBehaviour
     private SceneState currentSceneState;
     private float sceneTimer;
     private GameObject currentScene;
+    
+    public event Action<SceneState> OnSwitchSceneEvent;
     
     void Start()
     {
@@ -52,6 +56,14 @@ public class SceneSwitcher : MonoBehaviour
                 currentScene = rockScene;
                 currentSceneState = SceneState.rock;
                 break;
+            case SceneState.chiptune:
+                // TODO:
+                //currentScene = 
+                break;
+        }
+        if (OnSwitchSceneEvent != null)
+        {
+            OnSwitchSceneEvent(currentSceneState);
         }
         currentScene.SetActive(true);
     }

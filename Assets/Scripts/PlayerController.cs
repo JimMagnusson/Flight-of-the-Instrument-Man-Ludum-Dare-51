@@ -100,16 +100,6 @@ public class PlayerController : MonoBehaviour
             controller.Move(move * Time.deltaTime * moveSpeed);
             transform.position = new Vector3(transform.position.x, startYVal, transform.position.z);
             _wheelRotator.RotateWheels(true, input.magnitude * moveSpeed);
-            
-            //Adding these vectors together will result in a position in the world, that is around your player.
-            Vector3 goal = move + transform.position;
-            
-            /*
-            targetRotation = Quaternion.LookRotation(goal - transform.position);
-            
-            //Rotate smoothly to this target:
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
-            */
         }
 
     }

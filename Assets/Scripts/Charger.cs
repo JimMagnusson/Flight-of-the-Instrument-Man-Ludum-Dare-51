@@ -24,7 +24,14 @@ public class Charger : MonoBehaviour
     [SerializeField] private ParticleSystem chargeParticles;
 
     [SerializeField] private Transform target;
+    
+    [SerializeField] private GameObject rockBody;
+    [SerializeField] private GameObject clubBody;
+    [SerializeField] private GameObject chiptuneBody;
 
+    private SceneSwitcher _sceneSwitcher;
+    private GameObject _currentBody;
+    
     private float chargeCooldownTimer;
     private float chargePreparationTimer;
     
@@ -45,6 +52,27 @@ public class Charger : MonoBehaviour
         _navMeshAgent = GetComponent<NavMeshAgent>();
         _audioSource = GetComponent<AudioSource>();
         _moveTowardTarget = GetComponent<MoveTowardTarget>();
+        _sceneSwitcher = FindObjectOfType<SceneSwitcher>();
+        _sceneSwitcher.OnSwitchSceneEvent += SceneSwitcherOnOnSwitchSceneEvent;
+        _currentBody = rockBody;
+    }
+
+    private void SceneSwitcherOnOnSwitchSceneEvent(SceneState state)
+    {
+        _currentBody.SetActive(false);
+        switch (state)
+        {
+            case SceneState.rock:
+                _currentBody = rockBody;
+                break;
+            case SceneState.club:
+                _currentBody = clubBody;
+                break;
+            case SceneState.chiptune:
+                _currentBody = chiptuneBody;
+                break;
+        }
+        _currentBody.SetActive(true);
     }
 
     private void Update()
