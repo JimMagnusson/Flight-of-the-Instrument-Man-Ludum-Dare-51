@@ -222,6 +222,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageOnCollision: 2
   deathSFX: {fileID: 0}
+  damageMaterialDuration: 0.2
+  damageMaterial: {fileID: 2100000, guid: f73b7211e6154364eb909a2fc639de3a, type: 2}
+  _meshRenderers:
+  - {fileID: 6377349493725249281}
+  - {fileID: 5378714889312122599}
 --- !u!114 &9142015559855991748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,7 +239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f7e2842e580dc64ea929a8b8473ce8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 10
+  hp: 1
   alive: 1
 --- !u!195 &6290693653475998727
 NavMeshAgent:
@@ -246,7 +251,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 6
+  m_Speed: 3
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -473,9 +478,21 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 331463591737909701}
   m_PrefabAsset: {fileID: 0}
+--- !u!23 &5378714889312122599 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -3585831976574200030, guid: f0493edec80dece4cb904de75a76a90a,
+    type: 3}
+  m_PrefabInstance: {fileID: 331463591737909701}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5842282285760335655 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3059513526259405086, guid: f0493edec80dece4cb904de75a76a90a,
+    type: 3}
+  m_PrefabInstance: {fileID: 331463591737909701}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &6377349493725249281 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 6636474004368645828, guid: f0493edec80dece4cb904de75a76a90a,
     type: 3}
   m_PrefabInstance: {fileID: 331463591737909701}
   m_PrefabAsset: {fileID: 0}

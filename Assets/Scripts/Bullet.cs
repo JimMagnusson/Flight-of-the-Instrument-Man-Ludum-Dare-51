@@ -24,6 +24,6 @@ public class Bullet : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //TODO: Hit SFX
-        Destroy(this.gameObject);
+        Destroy(gameObject);
     }
 }

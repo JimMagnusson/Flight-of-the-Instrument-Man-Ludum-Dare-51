@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 2714689197866364496}
   m_Layer: 6
   m_Name: Guitar
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -220,6 +220,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageOnCollision: 2
   deathSFX: {fileID: 0}
+  damageMaterialDuration: 0.2
+  damageMaterial: {fileID: 2100000, guid: f73b7211e6154364eb909a2fc639de3a, type: 2}
+  _meshRenderers:
+  - {fileID: 1739903757368101140}
 --- !u!114 &277967347020356113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,7 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f7e2842e580dc64ea929a8b8473ce8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 10
+  hp: 1
   alive: 1
 --- !u!195 &1145309165859196306
 NavMeshAgent:
@@ -244,7 +248,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.75
-  m_Speed: 7
+  m_Speed: 3
   m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -361,6 +365,12 @@ PrefabInstance:
 --- !u!4 &607508637452399227 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c3e776cbef2d5a141a68c70274344999,
+    type: 3}
+  m_PrefabInstance: {fileID: 1145309166511429008}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &1739903757368101140 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: c3e776cbef2d5a141a68c70274344999,
     type: 3}
   m_PrefabInstance: {fileID: 1145309166511429008}
   m_PrefabAsset: {fileID: 0}
