@@ -63,8 +63,9 @@ public class PlayerController : MonoBehaviour
 
         Vector2 aimControllerInput = playerControls.Standard.AimController.ReadValue<Vector2>();
         Vector2 aimMouseInput = playerControls.Standard.Aim.ReadValue<Vector2>();
+        Vector2 aimMouseInputDelta = playerControls.Standard.MouseDelta.ReadValue<Vector2>();
         
-        if (aimMouseInput.magnitude > 0)
+        if (aimMouseInputDelta.magnitude > 0)
         {
             Vector3 mouseInput3 = new Vector3(aimMouseInput.x, aimMouseInput.y, 0);
             Ray ray = cam.ScreenPointToRay(mouseInput3);

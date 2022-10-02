@@ -62,6 +62,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""MouseDelta"",
+                    ""type"": ""Value"",
+                    ""id"": ""1cba16f7-91bf-493c-88fe-754627d61d2d"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -251,6 +260,17 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""action"": ""AimController"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""39f53baf-4971-4cbf-b14d-9adea2c31879"",
+                    ""path"": ""<Mouse>/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MouseDelta"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -263,6 +283,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_Standard_Attack = m_Standard.FindAction("Attack", throwIfNotFound: true);
         m_Standard_Aim = m_Standard.FindAction("Aim", throwIfNotFound: true);
         m_Standard_AimController = m_Standard.FindAction("AimController", throwIfNotFound: true);
+        m_Standard_MouseDelta = m_Standard.FindAction("MouseDelta", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -326,6 +347,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Standard_Attack;
     private readonly InputAction m_Standard_Aim;
     private readonly InputAction m_Standard_AimController;
+    private readonly InputAction m_Standard_MouseDelta;
     public struct StandardActions
     {
         private @PlayerControls m_Wrapper;
@@ -334,6 +356,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         public InputAction @Attack => m_Wrapper.m_Standard_Attack;
         public InputAction @Aim => m_Wrapper.m_Standard_Aim;
         public InputAction @AimController => m_Wrapper.m_Standard_AimController;
+        public InputAction @MouseDelta => m_Wrapper.m_Standard_MouseDelta;
         public InputActionMap Get() { return m_Wrapper.m_Standard; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -355,6 +378,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @AimController.started -= m_Wrapper.m_StandardActionsCallbackInterface.OnAimController;
                 @AimController.performed -= m_Wrapper.m_StandardActionsCallbackInterface.OnAimController;
                 @AimController.canceled -= m_Wrapper.m_StandardActionsCallbackInterface.OnAimController;
+                @MouseDelta.started -= m_Wrapper.m_StandardActionsCallbackInterface.OnMouseDelta;
+                @MouseDelta.performed -= m_Wrapper.m_StandardActionsCallbackInterface.OnMouseDelta;
+                @MouseDelta.canceled -= m_Wrapper.m_StandardActionsCallbackInterface.OnMouseDelta;
             }
             m_Wrapper.m_StandardActionsCallbackInterface = instance;
             if (instance != null)
@@ -371,6 +397,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @AimController.started += instance.OnAimController;
                 @AimController.performed += instance.OnAimController;
                 @AimController.canceled += instance.OnAimController;
+                @MouseDelta.started += instance.OnMouseDelta;
+                @MouseDelta.performed += instance.OnMouseDelta;
+                @MouseDelta.canceled += instance.OnMouseDelta;
             }
         }
     }
@@ -381,5 +410,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnAttack(InputAction.CallbackContext context);
         void OnAim(InputAction.CallbackContext context);
         void OnAimController(InputAction.CallbackContext context);
+        void OnMouseDelta(InputAction.CallbackContext context);
     }
 }
