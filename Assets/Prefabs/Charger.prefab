@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 2714689198114586733}
   - component: {fileID: 2714689198114586712}
   - component: {fileID: 2714689198114586723}
+  - component: {fileID: 522288572}
   m_Layer: 6
   m_Name: Charger
   m_TagString: Untagged
@@ -99,7 +100,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.98505175
+  MinDistance: 1.4694581
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -220,7 +221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63b869891bd347d439380c372df14aa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageOnCollision: 2
+  damageOnCollision: 1
   deathSFX: {fileID: 0}
   damageMaterialDuration: 0.2
   damageMaterial: {fileID: 2100000, guid: f73b7211e6154364eb909a2fc639de3a, type: 2}
@@ -239,7 +240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f7e2842e580dc64ea929a8b8473ce8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 12
+  hp: 6
   alive: 1
 --- !u!195 &6290693653475998727
 NavMeshAgent:
@@ -274,8 +275,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.0122194, y: 2.2746248, z: 2.2254436}
-  m_Center: {x: 0.5061097, y: -0.19828439, z: 0.07256949}
+  m_Size: {x: 2.8469067, y: 1.9958185, z: 2.2254436}
+  m_Center: {x: -0.025416374, y: 0.32014555, z: 0.07256949}
 --- !u!114 &2714689198114586712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,6 +314,22 @@ MonoBehaviour:
   chargeAudio: {fileID: 0}
   chargeParticles: {fileID: 0}
   target: {fileID: 0}
+--- !u!114 &522288572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6290693653475998736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 932142d3910d2a0488f3d24f086dd18c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wheels: {fileID: 5842282285760335655}
+  rotationSpeed: 5
+  axis: {x: 1, y: 0, z: 0}
+  active: 1
 --- !u!1001 &331463591737909701
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -373,12 +390,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: f0493edec80dece4cb904de75a76a90a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.621
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f0493edec80dece4cb904de75a76a90a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.211
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f0493edec80dece4cb904de75a76a90a,
         type: 3}

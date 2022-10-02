@@ -223,7 +223,7 @@ MonoBehaviour:
   damageMaterialDuration: 0.2
   damageMaterial: {fileID: 2100000, guid: f73b7211e6154364eb909a2fc639de3a, type: 2}
   _meshRenderers:
-  - {fileID: 1739903757368101140}
+  - {fileID: 7987710166911348488}
 --- !u!114 &277967347020356113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,7 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f7e2842e580dc64ea929a8b8473ce8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 1
+  hp: 6
   alive: 1
 --- !u!195 &1145309165859196306
 NavMeshAgent:
@@ -288,17 +288,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: c3e776cbef2d5a141a68c70274344999,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 75
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c3e776cbef2d5a141a68c70274344999,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 75
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c3e776cbef2d5a141a68c70274344999,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 75
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c3e776cbef2d5a141a68c70274344999,
         type: 3}
@@ -318,27 +318,27 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: c3e776cbef2d5a141a68c70274344999,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.46914938
+      value: 0.9507324
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c3e776cbef2d5a141a68c70274344999,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.88311887
+      value: -0.3100128
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c3e776cbef2d5a141a68c70274344999,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000014901159
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c3e776cbef2d5a141a68c70274344999,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c3e776cbef2d5a141a68c70274344999,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -124.042
+      value: -36.12
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c3e776cbef2d5a141a68c70274344999,
         type: 3}
@@ -368,9 +368,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1145309166511429008}
   m_PrefabAsset: {fileID: 0}
---- !u!23 &1739903757368101140 stripped
+--- !u!23 &7987710166911348488 stripped
 MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: c3e776cbef2d5a141a68c70274344999,
+  m_CorrespondingSourceObject: {fileID: 7007311354984888984, guid: c3e776cbef2d5a141a68c70274344999,
     type: 3}
   m_PrefabInstance: {fileID: 1145309166511429008}
   m_PrefabAsset: {fileID: 0}
