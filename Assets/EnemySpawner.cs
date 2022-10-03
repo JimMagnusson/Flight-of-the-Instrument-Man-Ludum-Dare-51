@@ -8,6 +8,9 @@ using Random = UnityEngine.Random;
 
 public class EnemySpawner : MonoBehaviour
 {
+    [SerializeField] private float spawnTime = 1f;
+    [SerializeField] private GameObject particles;
+    
     [SerializeField] private Transform[] spawnpoints;
 
     [SerializeField] private int startSpawnNumber = 3;
@@ -91,25 +94,22 @@ public class EnemySpawner : MonoBehaviour
         if (spawnTimer < 0)
         {
             spawnTimer = 1/spawnRate;
-            SpawnEnemy();
+            StartCoroutine(SpawnEnemy());
         }
     }
 
-    private void SpawnEnemy()
+     IEnumerator SpawnEnemy()
     {
-
+        
         if (spawnIndex == spawnpoints.Length)
         {
             spawnIndex = 0;
         }
 
-        if (spawnpoints.Length == 0)
-        {
-            return;
-        }
-        
         Vector3 spawnPos = spawnpoints[spawnIndex].position;
         spawnIndex++;
+        Instantiate(particles, spawnPos, quaternion.identity);
+        yield return new WaitForSeconds(spawnTime);
         
         GameObject enemyToSpawn;
         float random = Random.Range(0f, 1.0f);

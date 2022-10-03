@@ -12,6 +12,10 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] private AudioClip deathSFX;
     
+    [SerializeField] private ParticleSystem deathParticles;
+    [SerializeField] private ParticleSystem deathParticles2;
+    
+    
     [SerializeField] private float damageMaterialDuration = 0.2f;
     
     private Health health;
@@ -96,6 +100,9 @@ public class Enemy : MonoBehaviour
         {
             audioSource.PlayOneShot(deathSFX);
         }
+
+        Instantiate(deathParticles, transform.position, Quaternion.identity);
+        Instantiate(deathParticles2, transform.position, Quaternion.identity);
 
         foreach (GameObject body in bodies)
         {

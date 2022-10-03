@@ -17,6 +17,8 @@ public class Shooter : MonoBehaviour
     [SerializeField] private bool playSound = false;
 
     [SerializeField] private float bulletVol = 0.15f;
+
+    //[SerializeField] private GameObject bulletParticles;
     
     private PlayerControls playerControls;
 
@@ -66,6 +68,9 @@ public class Shooter : MonoBehaviour
             cooldownTimer = cooldownTime;
 
             Bullet bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, transform.rotation, bulletsParent).GetComponent<Bullet>();
+
+            //Instantiate(bulletParticles, transform.position, transform.rotation);
+            
             bullet.SetForwardVector(transform.forward);
             if (playSound)
             {

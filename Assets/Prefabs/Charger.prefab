@@ -224,6 +224,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageOnCollision: 1
   deathSFX: {fileID: 8300000, guid: 561ed0b6f841a444bb9fe4e39e50aa86, type: 3}
+  deathParticles: {fileID: 2144226466859286475, guid: 7526d21918620cd4db2a810fd674c9f0,
+    type: 3}
+  deathParticles2: {fileID: 2144226466859286475, guid: 10fc2452290bf3b4dbb7ccb1dad091c7,
+    type: 3}
   damageMaterialDuration: 0.1
   damageMaterial: {fileID: 2100000, guid: f73b7211e6154364eb909a2fc639de3a, type: 2}
   bodies:

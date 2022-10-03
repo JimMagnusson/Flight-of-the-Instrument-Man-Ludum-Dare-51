@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -17,6 +18,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float walkingThreshold = 0.5f;
     
     [SerializeField] private AudioClip deathSound;
+    [SerializeField] private ParticleSystem deathParticles;
 
     public Camera cam;
     
@@ -72,6 +74,7 @@ public class PlayerController : MonoBehaviour
     {
         // Death SFX and VFX
         //gameObject.SetActive(false);
+        Instantiate(deathParticles, transform.position, Quaternion.identity);
         audioSource.PlayOneShot(deathSound);
         
         // TODO: Show retry screen.
