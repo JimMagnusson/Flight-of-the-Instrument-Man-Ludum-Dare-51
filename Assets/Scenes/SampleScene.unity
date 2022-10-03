@@ -4889,6 +4889,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3476329699221444916, guid: d31cec86b2ed5854d8a4e84ebbe416a4,
+        type: 3}
+      propertyPath: cooldownTime
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d31cec86b2ed5854d8a4e84ebbe416a4, type: 3}
 --- !u!1001 &958307075672407972
@@ -4972,6 +4977,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 226760321294182593, guid: e8560428e90980848a57f024933eee42,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 226760323096856846, guid: e8560428e90980848a57f024933eee42,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 277967347020356114, guid: e8560428e90980848a57f024933eee42,
         type: 3}
       propertyPath: target
@@ -5043,6 +5058,11 @@ PrefabInstance:
       value: Guitar
       objectReference: {fileID: 0}
     - target: {fileID: 3046817016636542405, guid: e8560428e90980848a57f024933eee42,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6382276974736037555, guid: e8560428e90980848a57f024933eee42,
         type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -5228,6 +5248,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy Spawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 4802360572127991593, guid: 7ad85055173fad049b8e22c6395f2b67,
+        type: 3}
+      propertyPath: A
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4802360572127991593, guid: 7ad85055173fad049b8e22c6395f2b67,
         type: 3}

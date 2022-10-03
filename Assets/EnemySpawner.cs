@@ -48,6 +48,8 @@ public class EnemySpawner : MonoBehaviour
     
     private SceneState currentSceneState = SceneState.rock;
     private GameController _gameController;
+    
+    private bool isSpawning = false;
 
     [SerializeField] private int spawnNumber;
     void Start()
@@ -89,10 +91,15 @@ public class EnemySpawner : MonoBehaviour
         {
             return;
         }
+
+        if (!isSpawning)
+        {
+            spawnTimer -= Time.deltaTime;
+        }
         
-        spawnTimer -= Time.deltaTime;
         if (spawnTimer < 0)
         {
+            isSpawning = true;
             spawnTimer = 1/spawnRate;
             StartCoroutine(SpawnEnemy());
         }
@@ -111,6 +118,7 @@ public class EnemySpawner : MonoBehaviour
         Instantiate(particles, spawnPos, quaternion.identity);
         yield return new WaitForSeconds(spawnTime);
         
+        isSpawning = false;
         GameObject enemyToSpawn;
         float random = Random.Range(0f, 1.0f);
         if (random < percentageFollowers)
