@@ -34,11 +34,13 @@ public class SceneSwitcher : MonoBehaviour
     private float sceneTimer;
     private GameObject currentScene;
     private GameController _gameController;
+    private PlayerController playerController;
     
     public event Action<SceneState> OnSwitchSceneEvent;
     
     void Start()
     {
+        playerController = FindObjectOfType<PlayerController>();
         sceneTimer = sceneTime;
         currentScene = rockScene;
         _gameController = FindObjectOfType<GameController>();
@@ -55,7 +57,11 @@ public class SceneSwitcher : MonoBehaviour
             SwitchScene();
             sceneTimer = sceneTime;
         }
-        
+
+        if (currentSceneState == SceneState.chiptune)
+        {
+            playerController.cam.transform.position = extraCamera.transform.position;
+        }
     }
 
     private void SwitchScene()
@@ -76,6 +82,8 @@ public class SceneSwitcher : MonoBehaviour
                 pixelImage.enabled = true;
                 //vCam.gameObject.SetActive(false);
                 //vCamArcade.gameObject.SetActive(true);
+                //playerController.cam = extraCamera;
+                
                 break;
             case SceneState.chiptune:
                 currentScene = rockScene;
@@ -84,6 +92,7 @@ public class SceneSwitcher : MonoBehaviour
                 extraCamera.gameObject.SetActive(false);
                 someCamera.gameObject.SetActive(false);
                 pixelImage.enabled = false;
+                //playerController.cam = mainCamera;
                 //vCam.gameObject.SetActive(true);
                 //vCamArcade.gameObject.SetActive(false);
                 break;

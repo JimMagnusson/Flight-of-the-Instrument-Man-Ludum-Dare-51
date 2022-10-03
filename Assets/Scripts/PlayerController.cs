@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private float walkingThreshold = 0.5f;
 
-    [SerializeField] private Camera cam;
+    public Camera cam;
     
     private Health health;
     private Animator animator;
