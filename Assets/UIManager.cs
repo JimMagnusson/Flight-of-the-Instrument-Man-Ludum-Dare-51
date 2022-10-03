@@ -83,6 +83,6 @@ public class UIManager : MonoBehaviour
         
         roundTimerTMP.SetText("{0:0}", roundTimer);
         
-        totalTimeTimerTMP.SetText("{0:0} m {1:0} s", (int) totalTimeTimer/60, totalTimeTimer);
+        totalTimeTimerTMP.SetText("{0:0} m {1:0} s", (int) totalTimeTimer/60, totalTimeTimer % 60);
     }
 }
