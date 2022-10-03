@@ -2339,10 +2339,10 @@ MonoBehaviour:
   - {fileID: 1521818747}
   - {fileID: 214159539}
   - {fileID: 1197993273}
-  startSpawnNumber: 3
+  startSpawnNumber: 10
   A: 6
   printUntilRound: 10
-  secondsPerRound: 1
+  secondsPerRound: 10
   percentageFollowers: 0.75
   chargerPrefab: {fileID: 6290693653475998736, guid: 7ae61eb33d20b3d4491d5f9dc24c8cf7,
     type: 3}

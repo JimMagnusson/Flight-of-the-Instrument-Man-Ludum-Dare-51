@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 public class EnemySpawner : MonoBehaviour
@@ -41,6 +42,8 @@ public class EnemySpawner : MonoBehaviour
     private int testSceneCount = 1;
 
     private int spawnIndex = 0;
+    
+    private SceneState currentSceneState = SceneState.rock;
 
     [SerializeField] private int spawnNumber;
     void Start()
@@ -50,7 +53,7 @@ public class EnemySpawner : MonoBehaviour
         spawnNumber = startSpawnNumber;
 
         spawnRate = spawnNumber / secondsPerRound;
-        spawnTimer = spawnRate;
+        spawnTimer = 1/spawnRate;
 
         string str = "Spawn num: ";
         for (int i = 0; i < printUntilRound; i++)
@@ -65,6 +68,7 @@ public class EnemySpawner : MonoBehaviour
     private void SceneSwitcherOnOnSwitchSceneEvent(SceneState state)
     {
         DetermineNewSpawnRate();
+        currentSceneState = state;
     }
 
     private void DetermineNewSpawnRate()
@@ -79,7 +83,7 @@ public class EnemySpawner : MonoBehaviour
         spawnTimer -= Time.deltaTime;
         if (spawnTimer < 0)
         {
-            spawnTimer = spawnRate;
+            spawnTimer = 1/spawnRate;
             SpawnEnemy();
         }
     }
@@ -95,10 +99,10 @@ public class EnemySpawner : MonoBehaviour
         if (spawnpoints.Length == 0)
         {
             return;
-            
         }
+        
         Vector3 spawnPos = spawnpoints[spawnIndex].position;
-
+        spawnIndex++;
         
         GameObject enemyToSpawn;
         float random = Random.Range(0f, 1.0f);
@@ -107,12 +111,14 @@ public class EnemySpawner : MonoBehaviour
             enemyToSpawn = followerPrefab;
             FollowerEnemy enemy = Instantiate(enemyToSpawn, spawnPos, Quaternion.identity, enemiesParent).GetComponent<FollowerEnemy>();
             enemy.SetTarget(player);
+            enemy.SetBody(currentSceneState);
         }
         else
         {
             enemyToSpawn = chargerPrefab;
             Charger enemy = Instantiate(enemyToSpawn, spawnPos, Quaternion.identity, enemiesParent).GetComponent<Charger>();
             enemy.SetTarget(player);
+            enemy.SetBody(currentSceneState);
         }
         
     }

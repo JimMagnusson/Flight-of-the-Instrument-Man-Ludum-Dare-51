@@ -51,6 +51,7 @@ public class Charger : MonoBehaviour
     {
         _rotateTowardTarget = GetComponent<RotateTowardTarget>();
         _moveTowardTarget = GetComponent<MoveTowardTarget>();
+        _currentBody = rockBody;
     }
 
     private void Start()
@@ -60,17 +61,9 @@ public class Charger : MonoBehaviour
         _audioSource = GetComponent<AudioSource>();
         _sceneSwitcher = FindObjectOfType<SceneSwitcher>();
         _sceneSwitcher.OnSwitchSceneEvent += SceneSwitcherOnOnSwitchSceneEvent;
-        _currentBody = rockBody;
     }
-
-    public void SetTarget(Transform targ)
-    {
-        target = targ;
-        _moveTowardTarget.SetTarget(targ);
-        _rotateTowardTarget.SetTarget(targ);
-    }
-
-    private void SceneSwitcherOnOnSwitchSceneEvent(SceneState state)
+    
+    public void SetBody(SceneState state)
     {
         _currentBody.SetActive(false);
         switch (state)
@@ -86,6 +79,18 @@ public class Charger : MonoBehaviour
                 break;
         }
         _currentBody.SetActive(true);
+    }
+
+    public void SetTarget(Transform targ)
+    {
+        target = targ;
+        _moveTowardTarget.SetTarget(targ);
+        _rotateTowardTarget.SetTarget(targ);
+    }
+
+    private void SceneSwitcherOnOnSwitchSceneEvent(SceneState state)
+    {
+        SetBody(state);
     }
 
     private void Update()

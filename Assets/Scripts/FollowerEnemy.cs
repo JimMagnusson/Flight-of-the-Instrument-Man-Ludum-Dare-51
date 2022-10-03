@@ -25,6 +25,7 @@ public class FollowerEnemy : MonoBehaviour
     {
         _rotateTowardTarget = GetComponent<RotateTowardTarget>();
         _moveTowardTarget = GetComponent<MoveTowardTarget>();
+        _currentBody = rockBody;
     }
 
     void Start()
@@ -34,16 +35,9 @@ public class FollowerEnemy : MonoBehaviour
 
         _sceneSwitcher = FindObjectOfType<SceneSwitcher>();
         _sceneSwitcher.OnSwitchSceneEvent += SceneSwitcherOnOnSwitchSceneEvent;
-        _currentBody = rockBody;
-    }
-    
-    public void SetTarget(Transform targ)
-    {
-        _moveTowardTarget.SetTarget(targ);
-        _rotateTowardTarget.SetTarget(targ);
     }
 
-    private void SceneSwitcherOnOnSwitchSceneEvent(SceneState state)
+    public void SetBody(SceneState state)
     {
         _currentBody.SetActive(false);
         switch (state)
@@ -59,6 +53,17 @@ public class FollowerEnemy : MonoBehaviour
                 break;
         }
         _currentBody.SetActive(true);
+    }
+    
+    public void SetTarget(Transform targ)
+    {
+        _moveTowardTarget.SetTarget(targ);
+        _rotateTowardTarget.SetTarget(targ);
+    }
+
+    private void SceneSwitcherOnOnSwitchSceneEvent(SceneState state)
+    {
+        SetBody(state);
     }
 
     private void HealthOnOnDeathEvent(Health obj)

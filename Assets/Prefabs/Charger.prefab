@@ -245,7 +245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f7e2842e580dc64ea929a8b8473ce8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 6
+  hp: 2
   alive: 1
 --- !u!195 &6290693653475998727
 NavMeshAgent:
@@ -419,8 +419,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.9177136, y: 4.33776, z: 2.343089}
-  m_Center: {x: -0.008682966, y: 1.9031076, z: 0.028620424}
+  m_Size: {x: 5.7208395, y: 4.33776, z: 2.343089}
+  m_Center: {x: 0.047590733, y: 1.9031076, z: 0.028620481}
 --- !u!23 &3173044253823440976 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: -6050327784058417864, guid: e4ff74b124c4fa042b2f1093f1599916,
@@ -626,8 +626,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.7429605, y: 4.0969486, z: 3.2192671}
-  m_Center: {x: -0.03141403, y: 1.5484622, z: -0.05992875}
+  m_Size: {x: 6.0338445, y: 4.096948, z: 3.2192671}
+  m_Center: {x: -0.0067336415, y: 1.5484622, z: -0.05992875}
 --- !u!23 &5378714889312122599 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: -3585831976574200030, guid: f0493edec80dece4cb904de75a76a90a,
