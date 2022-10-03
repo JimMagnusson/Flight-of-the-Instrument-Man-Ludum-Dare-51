@@ -71,6 +71,33 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Exit"",
+                    ""type"": ""Button"",
+                    ""id"": ""25a9e87d-674e-4aa4-a807-4608070e31b5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""afd53ed2-7c6e-4fd7-9877-9636932b5280"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Retry"",
+                    ""type"": ""Button"",
+                    ""id"": ""c95c7f9f-d401-4237-b7f6-bf609e173376"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -271,6 +298,127 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""action"": ""MouseDelta"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1c39f7dd-f5fd-4de0-a5ad-8270f60927e2"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Exit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6d84520e-ea19-4361-817b-78beb358d280"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8f54f78d-5dcd-4306-954f-02604517b885"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""04c475cc-940e-46fa-bdbb-c117d95b13c6"",
+                    ""path"": ""<Mouse>/press"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Retry"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7ca74ca2-4629-48d9-b2f8-15f465773b0c"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Retry"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b2e88d11-e7ba-4dd3-954e-2d275c72d36d"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Retry"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c797279e-eba6-4b8b-8584-0e38ca538ebb"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Retry"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ad051b9b-f449-4fa6-9f68-1219daf5efb4"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Retry"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""36ba6f7e-8110-4e06-8511-2197d5040213"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Retry"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3d2d53d5-7b94-40c1-8db4-c06744954747"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Retry"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a7f581ee-55f3-44a2-9669-7a409c9889df"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Retry"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -284,6 +432,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_Standard_Aim = m_Standard.FindAction("Aim", throwIfNotFound: true);
         m_Standard_AimController = m_Standard.FindAction("AimController", throwIfNotFound: true);
         m_Standard_MouseDelta = m_Standard.FindAction("MouseDelta", throwIfNotFound: true);
+        m_Standard_Exit = m_Standard.FindAction("Exit", throwIfNotFound: true);
+        m_Standard_Pause = m_Standard.FindAction("Pause", throwIfNotFound: true);
+        m_Standard_Retry = m_Standard.FindAction("Retry", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -348,6 +499,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Standard_Aim;
     private readonly InputAction m_Standard_AimController;
     private readonly InputAction m_Standard_MouseDelta;
+    private readonly InputAction m_Standard_Exit;
+    private readonly InputAction m_Standard_Pause;
+    private readonly InputAction m_Standard_Retry;
     public struct StandardActions
     {
         private @PlayerControls m_Wrapper;
@@ -357,6 +511,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         public InputAction @Aim => m_Wrapper.m_Standard_Aim;
         public InputAction @AimController => m_Wrapper.m_Standard_AimController;
         public InputAction @MouseDelta => m_Wrapper.m_Standard_MouseDelta;
+        public InputAction @Exit => m_Wrapper.m_Standard_Exit;
+        public InputAction @Pause => m_Wrapper.m_Standard_Pause;
+        public InputAction @Retry => m_Wrapper.m_Standard_Retry;
         public InputActionMap Get() { return m_Wrapper.m_Standard; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -381,6 +538,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @MouseDelta.started -= m_Wrapper.m_StandardActionsCallbackInterface.OnMouseDelta;
                 @MouseDelta.performed -= m_Wrapper.m_StandardActionsCallbackInterface.OnMouseDelta;
                 @MouseDelta.canceled -= m_Wrapper.m_StandardActionsCallbackInterface.OnMouseDelta;
+                @Exit.started -= m_Wrapper.m_StandardActionsCallbackInterface.OnExit;
+                @Exit.performed -= m_Wrapper.m_StandardActionsCallbackInterface.OnExit;
+                @Exit.canceled -= m_Wrapper.m_StandardActionsCallbackInterface.OnExit;
+                @Pause.started -= m_Wrapper.m_StandardActionsCallbackInterface.OnPause;
+                @Pause.performed -= m_Wrapper.m_StandardActionsCallbackInterface.OnPause;
+                @Pause.canceled -= m_Wrapper.m_StandardActionsCallbackInterface.OnPause;
+                @Retry.started -= m_Wrapper.m_StandardActionsCallbackInterface.OnRetry;
+                @Retry.performed -= m_Wrapper.m_StandardActionsCallbackInterface.OnRetry;
+                @Retry.canceled -= m_Wrapper.m_StandardActionsCallbackInterface.OnRetry;
             }
             m_Wrapper.m_StandardActionsCallbackInterface = instance;
             if (instance != null)
@@ -400,6 +566,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @MouseDelta.started += instance.OnMouseDelta;
                 @MouseDelta.performed += instance.OnMouseDelta;
                 @MouseDelta.canceled += instance.OnMouseDelta;
+                @Exit.started += instance.OnExit;
+                @Exit.performed += instance.OnExit;
+                @Exit.canceled += instance.OnExit;
+                @Pause.started += instance.OnPause;
+                @Pause.performed += instance.OnPause;
+                @Pause.canceled += instance.OnPause;
+                @Retry.started += instance.OnRetry;
+                @Retry.performed += instance.OnRetry;
+                @Retry.canceled += instance.OnRetry;
             }
         }
     }
@@ -411,5 +586,8 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnAim(InputAction.CallbackContext context);
         void OnAimController(InputAction.CallbackContext context);
         void OnMouseDelta(InputAction.CallbackContext context);
+        void OnExit(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
+        void OnRetry(InputAction.CallbackContext context);
     }
 }

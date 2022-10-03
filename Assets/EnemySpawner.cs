@@ -44,10 +44,12 @@ public class EnemySpawner : MonoBehaviour
     private int spawnIndex = 0;
     
     private SceneState currentSceneState = SceneState.rock;
+    private GameController _gameController;
 
     [SerializeField] private int spawnNumber;
     void Start()
     {
+        _gameController = FindObjectOfType<GameController>();
         _sceneSwitcher = FindObjectOfType<SceneSwitcher>();
         _sceneSwitcher.OnSwitchSceneEvent += SceneSwitcherOnOnSwitchSceneEvent;
         spawnNumber = startSpawnNumber;
@@ -80,6 +82,11 @@ public class EnemySpawner : MonoBehaviour
 
     private void Update()
     {
+        if (_gameController.GameState == GameState.retry)
+        {
+            return;
+        }
+        
         spawnTimer -= Time.deltaTime;
         if (spawnTimer < 0)
         {

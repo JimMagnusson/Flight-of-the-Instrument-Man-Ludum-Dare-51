@@ -20,9 +20,9 @@ GameObject:
   - component: {fileID: 2714689198114586733}
   - component: {fileID: 2714689198114586712}
   - component: {fileID: 2714689198114586723}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Charger
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -581,7 +581,7 @@ PrefabInstance:
     - target: {fileID: -3059513526259405086, guid: f0493edec80dece4cb904de75a76a90a,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f0493edec80dece4cb904de75a76a90a,
         type: 3}
@@ -591,7 +591,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f0493edec80dece4cb904de75a76a90a,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f0493edec80dece4cb904de75a76a90a,
         type: 3}
@@ -601,7 +601,7 @@ PrefabInstance:
     - target: {fileID: 3548609625071157723, guid: f0493edec80dece4cb904de75a76a90a,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0493edec80dece4cb904de75a76a90a, type: 3}

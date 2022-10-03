@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 [RequireComponent(typeof(MoveTowardTarget))]
 [RequireComponent(typeof(RotateTowardTarget))]
@@ -20,21 +21,35 @@ public class FollowerEnemy : MonoBehaviour
     private MoveTowardTarget _moveTowardTarget;
     private SceneSwitcher _sceneSwitcher;
     private GameObject _currentBody;
+    private NavMeshAgent _navMeshAgent;
+    private GameController _gameController;
 
     private void Awake()
     {
         _rotateTowardTarget = GetComponent<RotateTowardTarget>();
         _moveTowardTarget = GetComponent<MoveTowardTarget>();
         _currentBody = rockBody;
+        _gameController = FindObjectOfType<GameController>();
     }
 
     void Start()
     {
+        _navMeshAgent = GetComponent<NavMeshAgent>();
         _health = GetComponent<Health>();
         _health.OnDeathEvent += HealthOnOnDeathEvent;
 
         _sceneSwitcher = FindObjectOfType<SceneSwitcher>();
         _sceneSwitcher.OnSwitchSceneEvent += SceneSwitcherOnOnSwitchSceneEvent;
+    }
+
+    private void Update()
+    {
+        if (_gameController.GameState == GameState.retry)
+        {
+            _rotateTowardTarget.SetRotationActive(false);
+            _moveTowardTarget.SetMovingActive(false);
+            _navMeshAgent.enabled = false;
+        }
     }
 
     public void SetBody(SceneState state)

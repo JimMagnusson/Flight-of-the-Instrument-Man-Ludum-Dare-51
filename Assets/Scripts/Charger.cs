@@ -44,6 +44,7 @@ public class Charger : MonoBehaviour
     private Vector3 chargeDirection;
     private MoveTowardTarget _moveTowardTarget;
     private RotateTowardTarget _rotateTowardTarget;
+    private GameController _gameController;
 
     private ChargeState _chargeState = ChargeState.normal;
 
@@ -52,6 +53,7 @@ public class Charger : MonoBehaviour
         _rotateTowardTarget = GetComponent<RotateTowardTarget>();
         _moveTowardTarget = GetComponent<MoveTowardTarget>();
         _currentBody = rockBody;
+        _gameController = FindObjectOfType<GameController>();
     }
 
     private void Start()
@@ -100,6 +102,15 @@ public class Charger : MonoBehaviour
             Debug.Log("No target");
             return;
         }
+        
+        if (_gameController.GameState == GameState.retry)
+        {
+            _rotateTowardTarget.SetRotationActive(false);
+            _moveTowardTarget.SetMovingActive(false);
+            _navMeshAgent.enabled = false;
+            return;
+        }
+        
         switch (_chargeState)
         {
             case ChargeState.normal:

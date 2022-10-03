@@ -7,12 +7,15 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] private Image WonGameImage;
     [SerializeField] private Image RetryImage;
     [SerializeField] private Image PauseImage;
     [SerializeField] private Image StartGameImage;
     
     [SerializeField] private TextMeshProUGUI totalTimeTimerTMP;
+    
+    [SerializeField] private TextMeshProUGUI totalTimeRetryTMP;
+    
+    [SerializeField] private TextMeshProUGUI bestTimeRetryTMP;
     
     [SerializeField] private TextMeshProUGUI roundTimerTMP;
     
@@ -22,19 +25,20 @@ public class UIManager : MonoBehaviour
     
     private float totalTimeTimer = 0;
 
+    private GameController _gameController;
+
     private void Start()
     {
         roundTimer = roundTime;
+        _gameController = FindObjectOfType<GameController>();
     }
-
-    public void ShowWonGameImage()
-    {
-        WonGameImage.gameObject.SetActive(true);
-    }
-
+    
     public void ShowRetryImage()
     {
         RetryImage.gameObject.SetActive(true);
+        totalTimeRetryTMP.SetText("Your time: {0:0} m {1:0} s", (int) totalTimeTimer/60, totalTimeTimer % 60);
+        
+        //bestTimeRetryTMP.SetText("Your best time: {0:0} m {1:0} s", (int) totalTimeTimer/60, totalTimeTimer % 60);
     }
 
     public void ToggleStartGameImage(bool boolean)
@@ -65,6 +69,11 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
+        if (_gameController.GameState == GameState.retry)
+        {
+            return;
+        }
+        
         totalTimeTimer += Time.deltaTime;
         roundTimer -= Time.deltaTime;
         if (roundTimer <= 0)

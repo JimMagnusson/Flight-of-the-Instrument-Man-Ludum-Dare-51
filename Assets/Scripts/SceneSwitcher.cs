@@ -33,6 +33,7 @@ public class SceneSwitcher : MonoBehaviour
     private SceneState currentSceneState;
     private float sceneTimer;
     private GameObject currentScene;
+    private GameController _gameController;
     
     public event Action<SceneState> OnSwitchSceneEvent;
     
@@ -40,10 +41,14 @@ public class SceneSwitcher : MonoBehaviour
     {
         sceneTimer = sceneTime;
         currentScene = rockScene;
+        _gameController = FindObjectOfType<GameController>();
     }
     void Update()
     {
-        
+        if (_gameController.GameState == GameState.retry)
+        {
+            return;
+        }
         sceneTimer -= Time.deltaTime;
         if (sceneTimer < 0)
         {
@@ -69,8 +74,8 @@ public class SceneSwitcher : MonoBehaviour
                 extraCamera.gameObject.SetActive(true);
                 someCamera.gameObject.SetActive(true);
                 pixelImage.enabled = true;
-                vCam.gameObject.SetActive(false);
-                vCamArcade.gameObject.SetActive(true);
+                //vCam.gameObject.SetActive(false);
+                //vCamArcade.gameObject.SetActive(true);
                 break;
             case SceneState.chiptune:
                 currentScene = rockScene;
@@ -79,8 +84,8 @@ public class SceneSwitcher : MonoBehaviour
                 extraCamera.gameObject.SetActive(false);
                 someCamera.gameObject.SetActive(false);
                 pixelImage.enabled = false;
-                vCam.gameObject.SetActive(true);
-                vCamArcade.gameObject.SetActive(false);
+                //vCam.gameObject.SetActive(true);
+                //vCamArcade.gameObject.SetActive(false);
                 break;
         }
         if (OnSwitchSceneEvent != null)

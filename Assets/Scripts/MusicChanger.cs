@@ -25,12 +25,15 @@ public class MusicChanger : MonoBehaviour
     private int numberOfSongsPerScene = 2;
 
     private int sceneChangeCount = 0;
+    
+    private GameController _gameController;
 
     private void Start()
     {
         _audioSource = GetComponent<AudioSource>();
         _sceneSwitcher = FindObjectOfType<SceneSwitcher>();
         _sceneSwitcher.OnSwitchSceneEvent += SceneSwitcherOnOnSwitchSceneEvent;
+        _gameController = FindObjectOfType<GameController>();
     }
 
     private void SceneSwitcherOnOnSwitchSceneEvent(SceneState obj)

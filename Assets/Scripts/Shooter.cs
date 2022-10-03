@@ -17,9 +17,12 @@ public class Shooter : MonoBehaviour
     private bool buttonPressed = false;
     
     private float cooldownTimer;
+    
+    private GameController _gameController;
 
     private void Awake() {
         playerControls = new PlayerControls();
+        _gameController = FindObjectOfType<GameController>();
     }
     
     private void OnEnable() {
@@ -38,6 +41,10 @@ public class Shooter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (_gameController.GameState == GameState.retry)
+        {
+            return;
+        }
         if (bulletPrefab == null)
         {
             return;

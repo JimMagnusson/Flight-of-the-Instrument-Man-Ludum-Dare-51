@@ -38,11 +38,11 @@ public class MoveTowardTarget : MonoBehaviour
 
     void Update()
     {
-        if(wheels) {
-            _wheelRotator.RotateWheels(true, moveSpeed);
-        }
         if(!movingActive) {
             return;
+        }
+        if(wheels) {
+            _wheelRotator.RotateWheels(true, moveSpeed);
         }
         agent.destination = target.position; 
     }

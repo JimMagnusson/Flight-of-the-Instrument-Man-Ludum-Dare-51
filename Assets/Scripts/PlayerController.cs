@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -30,10 +31,16 @@ public class PlayerController : MonoBehaviour
 
     private WheelRotator _wheelRotator;
     
+    private UIManager uiManager;
+
+    private GameController _gameController;
+    
     private float startYVal;
 
     private void Awake() {
         playerControls = new PlayerControls();
+        uiManager = FindObjectOfType<UIManager>();
+        _gameController = FindObjectOfType<GameController>();
     }
     
     private void OnEnable() {
@@ -53,10 +60,37 @@ public class PlayerController : MonoBehaviour
         controller = GetComponent<CharacterController>();
 
         _wheelRotator = GetComponent<WheelRotator>();
+        health.OnDeathEvent += HealthOnOnDeathEvent;
     }
+
+    private void HealthOnOnDeathEvent(Health obj)
+    {
+        // Death SFX and VFX
+        //gameObject.SetActive(false);
+        
+        // TODO: Show retry screen.
+        uiManager.ShowRetryImage();
+        _gameController.GameState = GameState.retry;
+    }
+
     // Update is called once per frame
     void Update()
     {
+        if (playerControls.Standard.Exit.triggered)
+        {
+            Application.Quit();
+        }
+        
+        if (_gameController.GameState == GameState.retry && playerControls.Standard.Retry.triggered)
+        {
+            FindObjectOfType<LevelLoader>().ReloadScene();
+        }
+
+        if (_gameController.GameState == GameState.retry)
+        {
+            return;
+        }
+        
         Vector2 input = playerControls.Standard.Move.ReadValue<Vector2>();
         Vector3 aimInput = Vector3.zero;
         
@@ -102,5 +136,13 @@ public class PlayerController : MonoBehaviour
             _wheelRotator.RotateWheels(true, input.magnitude * moveSpeed);
         }
 
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            health.RecieveDamage(1);
+        }
     }
 }
