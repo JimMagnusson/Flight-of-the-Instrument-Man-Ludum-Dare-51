@@ -20,16 +20,27 @@ public class FollowerEnemy : MonoBehaviour
     private MoveTowardTarget _moveTowardTarget;
     private SceneSwitcher _sceneSwitcher;
     private GameObject _currentBody;
-    
+
+    private void Awake()
+    {
+        _rotateTowardTarget = GetComponent<RotateTowardTarget>();
+        _moveTowardTarget = GetComponent<MoveTowardTarget>();
+    }
+
     void Start()
     {
         _health = GetComponent<Health>();
         _health.OnDeathEvent += HealthOnOnDeathEvent;
-        _rotateTowardTarget = GetComponent<RotateTowardTarget>();
-        _moveTowardTarget = GetComponent<MoveTowardTarget>();
+
         _sceneSwitcher = FindObjectOfType<SceneSwitcher>();
         _sceneSwitcher.OnSwitchSceneEvent += SceneSwitcherOnOnSwitchSceneEvent;
         _currentBody = rockBody;
+    }
+    
+    public void SetTarget(Transform targ)
+    {
+        _moveTowardTarget.SetTarget(targ);
+        _rotateTowardTarget.SetTarget(targ);
     }
 
     private void SceneSwitcherOnOnSwitchSceneEvent(SceneState state)

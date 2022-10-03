@@ -8,6 +8,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/EnemySpawner.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Bullet.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/FollowerEnemy.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -73,7 +74,7 @@
       <workItem from="1664697487776" duration="4953000" />
       <workItem from="1664709577204" duration="6214000" />
       <workItem from="1664726630534" duration="5759000" />
-      <workItem from="1664792999766" duration="2402000" />
+      <workItem from="1664792999766" duration="6320000" />
     </task>
     <servers />
   </component>

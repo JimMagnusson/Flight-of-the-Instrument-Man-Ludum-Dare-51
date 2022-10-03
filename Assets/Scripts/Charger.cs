@@ -43,18 +43,31 @@ public class Charger : MonoBehaviour
     private Vector3 chargeStartPosition;
     private Vector3 chargeDirection;
     private MoveTowardTarget _moveTowardTarget;
+    private RotateTowardTarget _rotateTowardTarget;
 
     private ChargeState _chargeState = ChargeState.normal;
+
+    private void Awake()
+    {
+        _rotateTowardTarget = GetComponent<RotateTowardTarget>();
+        _moveTowardTarget = GetComponent<MoveTowardTarget>();
+    }
 
     private void Start()
     {
         chargeCooldownTimer = chargeCooldownTime;
         _navMeshAgent = GetComponent<NavMeshAgent>();
         _audioSource = GetComponent<AudioSource>();
-        _moveTowardTarget = GetComponent<MoveTowardTarget>();
         _sceneSwitcher = FindObjectOfType<SceneSwitcher>();
         _sceneSwitcher.OnSwitchSceneEvent += SceneSwitcherOnOnSwitchSceneEvent;
         _currentBody = rockBody;
+    }
+
+    public void SetTarget(Transform targ)
+    {
+        target = targ;
+        _moveTowardTarget.SetTarget(targ);
+        _rotateTowardTarget.SetTarget(targ);
     }
 
     private void SceneSwitcherOnOnSwitchSceneEvent(SceneState state)
