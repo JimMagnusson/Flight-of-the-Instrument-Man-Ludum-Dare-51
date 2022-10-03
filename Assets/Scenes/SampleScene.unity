@@ -1080,6 +1080,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9142015559855991747, guid: 7ae61eb33d20b3d4491d5f9dc24c8cf7,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 9142015559855991750, guid: 7ae61eb33d20b3d4491d5f9dc24c8cf7,
         type: 3}
       propertyPath: target
@@ -1835,6 +1840,9 @@ MonoBehaviour:
   bulletSpawnPoint: {fileID: 1381984787}
   bulletsParent: {fileID: 1935588803}
   cooldownTime: 0.2
+  bulletSound: {fileID: 8300000, guid: 6b87cb71c31b82e429a267d2815168d2, type: 3}
+  playSound: 0
+  bulletVol: 0.15
 --- !u!65 &962771359
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1848,6 +1856,102 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.5322723, y: 2.3639896, z: 1.6491218}
   m_Center: {x: -0.12802792, y: 0.38831615, z: -0.00063729286}
+--- !u!82 &962771366
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962771338}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.2
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &982188220 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -94588680526288170, guid: e3969d0e5cc4bc048b64ef16997535bd,
@@ -4824,6 +4928,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 533281791794275849, guid: d31cec86b2ed5854d8a4e84ebbe416a4,
         type: 3}
+      propertyPath: deathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 7d1627d550f17644eab3fa6b99977947, type: 3}
+    - target: {fileID: 533281791794275849, guid: d31cec86b2ed5854d8a4e84ebbe416a4,
+        type: 3}
       propertyPath: rotationSpeed
       value: 10
       objectReference: {fileID: 0}
@@ -5127,11 +5236,6 @@ PrefabInstance:
       value: Guitar
       objectReference: {fileID: 0}
     - target: {fileID: 3046817016636542405, guid: e8560428e90980848a57f024933eee42,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6382276974736037555, guid: e8560428e90980848a57f024933eee42,
         type: 3}
       propertyPath: m_IsActive
       value: 0

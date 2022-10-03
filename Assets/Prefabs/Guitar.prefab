@@ -90,8 +90,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -221,9 +221,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageOnCollision: 2
-  deathSFX: {fileID: 0}
+  deathSFX: {fileID: 8300000, guid: 561ed0b6f841a444bb9fe4e39e50aa86, type: 3}
   damageMaterialDuration: 0.1
   damageMaterial: {fileID: 2100000, guid: f73b7211e6154364eb909a2fc639de3a, type: 2}
+  bodies:
+  - {fileID: 226760321294182593}
+  - {fileID: 226760323096856846}
+  - {fileID: 6382276974736037555}
   _rockMeshRenderers:
   - {fileID: 7987710166911348488}
   _clubMeshRenderers:

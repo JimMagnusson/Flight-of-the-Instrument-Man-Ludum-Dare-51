@@ -21,6 +21,8 @@ public class Enemy : MonoBehaviour
     private Material standardMaterial;
     
     
+    [SerializeField] private GameObject[] bodies;
+    
     [SerializeField] private MeshRenderer[] _rockMeshRenderers;
     [SerializeField] private MeshRenderer[] _clubMeshRenderers;
     [SerializeField] private MeshRenderer[] _chiptuneMeshRenderers;
@@ -35,6 +37,7 @@ public class Enemy : MonoBehaviour
     }
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         health = GetComponent<Health>();
         //audioSource.GetComponent<AudioSource>();
         health.OnDeathEvent += HealthOnOnDeathEvent;
@@ -93,6 +96,14 @@ public class Enemy : MonoBehaviour
         {
             audioSource.PlayOneShot(deathSFX);
         }
-        Destroy(gameObject);
+
+        foreach (GameObject body in bodies)
+        {
+            body.SetActive(false);
+        }
+        
+        _sceneSwitcher.OnSwitchSceneEvent -= SceneSwitcherOnOnSwitchSceneEvent;
+        Destroy(gameObject, 2f);
+        
     }
 }

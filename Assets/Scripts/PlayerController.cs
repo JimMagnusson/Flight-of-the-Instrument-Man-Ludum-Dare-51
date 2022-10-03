@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float rotationSpeed = 1f;
 
     [SerializeField] private float walkingThreshold = 0.5f;
+    
+    [SerializeField] private AudioClip deathSound;
 
     public Camera cam;
     
@@ -36,6 +38,8 @@ public class PlayerController : MonoBehaviour
     private GameController _gameController;
     
     private float startYVal;
+    
+    private AudioSource audioSource;
 
     private void Awake() {
         playerControls = new PlayerControls();
@@ -56,6 +60,7 @@ public class PlayerController : MonoBehaviour
         startYVal = transform.position.y;
         health = GetComponent<Health>();
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
         
         controller = GetComponent<CharacterController>();
 
@@ -67,6 +72,7 @@ public class PlayerController : MonoBehaviour
     {
         // Death SFX and VFX
         //gameObject.SetActive(false);
+        audioSource.PlayOneShot(deathSound);
         
         // TODO: Show retry screen.
         uiManager.ShowRetryImage();

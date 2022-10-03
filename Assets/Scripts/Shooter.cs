@@ -12,6 +12,12 @@ public class Shooter : MonoBehaviour
     
     [SerializeField] private float cooldownTime;
     
+    [SerializeField] private AudioClip bulletSound;
+    
+    [SerializeField] private bool playSound = false;
+
+    [SerializeField] private float bulletVol = 0.15f;
+    
     private PlayerControls playerControls;
 
     private bool buttonPressed = false;
@@ -19,10 +25,14 @@ public class Shooter : MonoBehaviour
     private float cooldownTimer;
     
     private GameController _gameController;
+    
+    private AudioSource audioSource;
+    
 
     private void Awake() {
         playerControls = new PlayerControls();
         _gameController = FindObjectOfType<GameController>();
+        audioSource = GetComponent<AudioSource>();
     }
     
     private void OnEnable() {
@@ -57,6 +67,10 @@ public class Shooter : MonoBehaviour
 
             Bullet bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, transform.rotation, bulletsParent).GetComponent<Bullet>();
             bullet.SetForwardVector(transform.forward);
+            if (playSound)
+            {
+                audioSource.PlayOneShot(bulletSound, bulletVol);
+            }
         }
     }
 }
