@@ -228,7 +228,8 @@ MonoBehaviour:
   - {fileID: 7987710166911348488}
   _clubMeshRenderers:
   - {fileID: 3704370882065146147}
-  _chiptuneMeshRenderers: []
+  _chiptuneMeshRenderers:
+  - {fileID: 7987710166911348488}
 --- !u!114 &277967347020356113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,7 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f7e2842e580dc64ea929a8b8473ce8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 2
+  hp: 1
   alive: 1
 --- !u!195 &1145309165859196306
 NavMeshAgent:
@@ -253,7 +254,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 2
-  m_Speed: 3
+  m_Speed: 8
   m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -294,7 +295,7 @@ MonoBehaviour:
   canMoveTowardTarget: 1
   rockBody: {fileID: 226760321294182593}
   clubBody: {fileID: 226760323096856846}
-  chiptuneBody: {fileID: 0}
+  chiptuneBody: {fileID: 226760321294182593}
 --- !u!1001 &1145309165226980447
 PrefabInstance:
   m_ObjectHideFlags: 0

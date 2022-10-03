@@ -13,7 +13,8 @@ public class SceneSwitcher : MonoBehaviour
 {
     [SerializeField] private GameObject rockScene;
     [SerializeField] private GameObject clubScene;
-
+    [SerializeField] private GameObject chiptuneScene;
+    
     [SerializeField] private float sceneTime = 10f;
     
     
@@ -28,9 +29,6 @@ public class SceneSwitcher : MonoBehaviour
         sceneTimer = sceneTime;
         currentScene = rockScene;
     }
-    
-    
-
     void Update()
     {
         
@@ -53,12 +51,12 @@ public class SceneSwitcher : MonoBehaviour
                 currentSceneState = SceneState.club;
                 break;
             case SceneState.club:
-                currentScene = rockScene;
-                currentSceneState = SceneState.rock;
+                currentScene = chiptuneScene;
+                currentSceneState = SceneState.chiptune;
                 break;
             case SceneState.chiptune:
-                // TODO:
-                //currentScene = 
+                currentScene = rockScene;
+                currentSceneState = SceneState.rock;
                 break;
         }
         if (OnSwitchSceneEvent != null)
