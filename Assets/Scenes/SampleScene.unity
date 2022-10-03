@@ -2850,7 +2850,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: e3969d0e5cc4bc048b64ef16997535bd,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2
+      value: -2.29
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e3969d0e5cc4bc048b64ef16997535bd,
         type: 3}
@@ -4708,26 +4708,127 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 391262291, guid: d31cec86b2ed5854d8a4e84ebbe416a4, type: 3}
+      propertyPath: m_Time
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 391262291, guid: d31cec86b2ed5854d8a4e84ebbe416a4, type: 3}
+      propertyPath: m_Autodestruct
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 391262291, guid: d31cec86b2ed5854d8a4e84ebbe416a4, type: 3}
+      propertyPath: m_Parameters.colorGradient.atime1
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 391262291, guid: d31cec86b2ed5854d8a4e84ebbe416a4, type: 3}
+      propertyPath: m_Parameters.colorGradient.ctime2
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 391262291, guid: d31cec86b2ed5854d8a4e84ebbe416a4, type: 3}
+      propertyPath: m_Parameters.colorGradient.ctime3
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 391262291, guid: d31cec86b2ed5854d8a4e84ebbe416a4, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 391262291, guid: d31cec86b2ed5854d8a4e84ebbe416a4, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.a
+      value: 0.29411766
+      objectReference: {fileID: 0}
+    - target: {fileID: 607072420, guid: d31cec86b2ed5854d8a4e84ebbe416a4, type: 3}
+      propertyPath: m_Time
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 607072420, guid: d31cec86b2ed5854d8a4e84ebbe416a4, type: 3}
+      propertyPath: m_Autodestruct
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 607072420, guid: d31cec86b2ed5854d8a4e84ebbe416a4, type: 3}
+      propertyPath: m_Parameters.colorGradient.atime1
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 607072420, guid: d31cec86b2ed5854d8a4e84ebbe416a4, type: 3}
+      propertyPath: m_Parameters.colorGradient.ctime2
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 607072420, guid: d31cec86b2ed5854d8a4e84ebbe416a4, type: 3}
+      propertyPath: m_Parameters.colorGradient.ctime3
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 607072420, guid: d31cec86b2ed5854d8a4e84ebbe416a4, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 607072420, guid: d31cec86b2ed5854d8a4e84ebbe416a4, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.a
+      value: 0.29411766
+      objectReference: {fileID: 0}
     - target: {fileID: 962771352, guid: d31cec86b2ed5854d8a4e84ebbe416a4, type: 3}
       propertyPath: bulletsParent
       value: 
       objectReference: {fileID: 1935588803}
-    - target: {fileID: 962771352, guid: d31cec86b2ed5854d8a4e84ebbe416a4, type: 3}
-      propertyPath: bulletParticles
-      value: 
-      objectReference: {fileID: 6694489571033776709, guid: 10fc2452290bf3b4dbb7ccb1dad091c7,
-        type: 3}
+    - target: {fileID: 1125219489, guid: d31cec86b2ed5854d8a4e84ebbe416a4, type: 3}
+      propertyPath: m_Time
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1125219489, guid: d31cec86b2ed5854d8a4e84ebbe416a4, type: 3}
+      propertyPath: m_Autodestruct
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1125219489, guid: d31cec86b2ed5854d8a4e84ebbe416a4, type: 3}
+      propertyPath: m_Parameters.colorGradient.atime1
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 1125219489, guid: d31cec86b2ed5854d8a4e84ebbe416a4, type: 3}
+      propertyPath: m_Parameters.colorGradient.ctime2
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 1125219489, guid: d31cec86b2ed5854d8a4e84ebbe416a4, type: 3}
+      propertyPath: m_Parameters.colorGradient.ctime3
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 1125219489, guid: d31cec86b2ed5854d8a4e84ebbe416a4, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1125219489, guid: d31cec86b2ed5854d8a4e84ebbe416a4, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.a
+      value: 0.29411766
+      objectReference: {fileID: 0}
+    - target: {fileID: 1720331750, guid: d31cec86b2ed5854d8a4e84ebbe416a4, type: 3}
+      propertyPath: m_Time
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1720331750, guid: d31cec86b2ed5854d8a4e84ebbe416a4, type: 3}
+      propertyPath: m_Autodestruct
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1720331750, guid: d31cec86b2ed5854d8a4e84ebbe416a4, type: 3}
+      propertyPath: m_Parameters.colorGradient.atime1
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 1720331750, guid: d31cec86b2ed5854d8a4e84ebbe416a4, type: 3}
+      propertyPath: m_Parameters.colorGradient.ctime2
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 1720331750, guid: d31cec86b2ed5854d8a4e84ebbe416a4, type: 3}
+      propertyPath: m_Parameters.colorGradient.ctime3
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 1720331750, guid: d31cec86b2ed5854d8a4e84ebbe416a4, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1720331750, guid: d31cec86b2ed5854d8a4e84ebbe416a4, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.a
+      value: 0.29411766
+      objectReference: {fileID: 0}
     - target: {fileID: 533281791794275849, guid: d31cec86b2ed5854d8a4e84ebbe416a4,
         type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 844152731}
-    - target: {fileID: 533281791794275849, guid: d31cec86b2ed5854d8a4e84ebbe416a4,
-        type: 3}
-      propertyPath: deathParticles
-      value: 
-      objectReference: {fileID: 2144226466859286475, guid: 7526d21918620cd4db2a810fd674c9f0,
-        type: 3}
     - target: {fileID: 533281791794275850, guid: d31cec86b2ed5854d8a4e84ebbe416a4,
         type: 3}
       propertyPath: m_RootOrder
