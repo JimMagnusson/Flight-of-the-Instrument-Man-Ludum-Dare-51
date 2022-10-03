@@ -56,12 +56,8 @@ public class FollowerEnemy : MonoBehaviour
         _moveTowardTarget.SetMovingActive(false);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnDestroy()
     {
-        //TODO: temp. remove
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            _health.RecieveDamage(1000);
-        }
+        _sceneSwitcher.OnSwitchSceneEvent -= SceneSwitcherOnOnSwitchSceneEvent;
     }
 }

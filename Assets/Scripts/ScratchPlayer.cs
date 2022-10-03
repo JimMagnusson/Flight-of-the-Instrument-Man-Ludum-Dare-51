@@ -10,26 +10,32 @@ public class ScratchPlayer : MonoBehaviour
     private float timer;
     private float sceneTimer;
     private AudioSource _audioSource;
+
+    private bool scratchPlayed = false;
     // Start is called before the first frame update
     void Start()
     {
         timer = scratchTime;
         _audioSource = GetComponent<AudioSource>();
+        sceneTimer = sceneTime;
     }
 
     // Update is called once per frame
     void Update()
     {
         timer -= Time.deltaTime;
-        if (timer < 0)
+        if (timer < 0 && !scratchPlayed)
         {
+            scratchPlayed = true;
             _audioSource.Play();
         }
 
         sceneTimer -= Time.deltaTime;
         if (sceneTimer < 0)
         {
+            sceneTimer = sceneTime;
             timer = scratchTime;
+            scratchPlayed = false;
         }
     }
 }

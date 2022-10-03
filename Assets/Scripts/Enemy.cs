@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [RequireComponent(typeof(Health))]
 [RequireComponent(typeof(AudioSource))]
@@ -18,8 +19,16 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] private Material damageMaterial;
     private Material standardMaterial;
-    [SerializeField] private MeshRenderer[] _meshRenderers;
+    
+    
+    [SerializeField] private MeshRenderer[] _rockMeshRenderers;
+    [SerializeField] private MeshRenderer[] _clubMeshRenderers;
+    [SerializeField] private MeshRenderer[] _chiptuneMeshRenderers;
 
+    private MeshRenderer[] currentMeshRenderers;
+    
+    private SceneSwitcher _sceneSwitcher;
+    
     public float GetDamageOnCollision()
     {
         return damageOnCollision;
@@ -29,7 +38,27 @@ public class Enemy : MonoBehaviour
         health = GetComponent<Health>();
         //audioSource.GetComponent<AudioSource>();
         health.OnDeathEvent += HealthOnOnDeathEvent;
-        standardMaterial = _meshRenderers[0].material;
+        standardMaterial = _rockMeshRenderers[0].material;
+        _sceneSwitcher = FindObjectOfType<SceneSwitcher>();
+        _sceneSwitcher.OnSwitchSceneEvent += SceneSwitcherOnOnSwitchSceneEvent;
+        
+        currentMeshRenderers = _rockMeshRenderers;
+    }
+
+    private void SceneSwitcherOnOnSwitchSceneEvent(SceneState state)
+    {
+        switch (state)
+        {
+            case SceneState.rock:
+                currentMeshRenderers = _rockMeshRenderers;
+                break;
+            case SceneState.club:
+                currentMeshRenderers = _clubMeshRenderers;
+                break;
+            case SceneState.chiptune:
+                currentMeshRenderers = _chiptuneMeshRenderers;
+                break;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -44,12 +73,12 @@ public class Enemy : MonoBehaviour
     private IEnumerator DamageCoroutine()
     {
         //_meshRenderer.material = damageMaterial;
-        foreach (MeshRenderer renderer in _meshRenderers)
+        foreach (MeshRenderer renderer in currentMeshRenderers)
         {
             renderer.material = damageMaterial;
         }
         yield return new WaitForSeconds(damageMaterialDuration);
-        foreach (MeshRenderer renderer in _meshRenderers)
+        foreach (MeshRenderer renderer in currentMeshRenderers)
         {
             renderer.material = standardMaterial;
         }

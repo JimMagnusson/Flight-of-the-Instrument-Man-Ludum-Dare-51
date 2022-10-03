@@ -145,6 +145,11 @@ public class Charger : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        _sceneSwitcher.OnSwitchSceneEvent -= SceneSwitcherOnOnSwitchSceneEvent;
+    }
+
     private void ExitCharge()
     {
         _chargeState = ChargeState.normal;
