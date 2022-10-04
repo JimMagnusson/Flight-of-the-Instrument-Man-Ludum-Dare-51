@@ -45,6 +45,7 @@ public class Charger : MonoBehaviour
     private MoveTowardTarget _moveTowardTarget;
     private RotateTowardTarget _rotateTowardTarget;
     private GameController _gameController;
+    private Health _health;
 
     private ChargeState _chargeState = ChargeState.normal;
 
@@ -58,11 +59,20 @@ public class Charger : MonoBehaviour
 
     private void Start()
     {
+        _health = GetComponent<Health>();
         chargeCooldownTimer = chargeCooldownTime;
         _navMeshAgent = GetComponent<NavMeshAgent>();
         _audioSource = GetComponent<AudioSource>();
         _sceneSwitcher = FindObjectOfType<SceneSwitcher>();
         _sceneSwitcher.OnSwitchSceneEvent += SceneSwitcherOnOnSwitchSceneEvent;
+        _health.OnDeathEvent += HealthOnOnDeathEvent;
+    }
+    
+    private void HealthOnOnDeathEvent(Health obj)
+    {
+        _rotateTowardTarget.SetRotationActive(false);
+        _moveTowardTarget.SetMovingActive(false);
+        _sceneSwitcher.OnSwitchSceneEvent -= SceneSwitcherOnOnSwitchSceneEvent;
     }
     
     public void SetBody(SceneState state)
@@ -172,11 +182,6 @@ public class Charger : MonoBehaviour
         {
             _audioSource.PlayOneShot(chargeAudio);
         }
-    }
-
-    private void OnDestroy()
-    {
-        _sceneSwitcher.OnSwitchSceneEvent -= SceneSwitcherOnOnSwitchSceneEvent;
     }
 
     private void ExitCharge()

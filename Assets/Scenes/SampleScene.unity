@@ -4714,7 +4714,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 391262291, guid: d31cec86b2ed5854d8a4e84ebbe416a4, type: 3}
       propertyPath: m_Autodestruct
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 391262291, guid: d31cec86b2ed5854d8a4e84ebbe416a4, type: 3}
       propertyPath: m_Parameters.colorGradient.atime1
@@ -4742,7 +4742,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 607072420, guid: d31cec86b2ed5854d8a4e84ebbe416a4, type: 3}
       propertyPath: m_Autodestruct
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 607072420, guid: d31cec86b2ed5854d8a4e84ebbe416a4, type: 3}
       propertyPath: m_Parameters.colorGradient.atime1
@@ -4774,7 +4774,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1125219489, guid: d31cec86b2ed5854d8a4e84ebbe416a4, type: 3}
       propertyPath: m_Autodestruct
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1125219489, guid: d31cec86b2ed5854d8a4e84ebbe416a4, type: 3}
       propertyPath: m_Parameters.colorGradient.atime1
@@ -4802,7 +4802,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1720331750, guid: d31cec86b2ed5854d8a4e84ebbe416a4, type: 3}
       propertyPath: m_Autodestruct
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1720331750, guid: d31cec86b2ed5854d8a4e84ebbe416a4, type: 3}
       propertyPath: m_Parameters.colorGradient.atime1
@@ -4893,6 +4893,11 @@ PrefabInstance:
         type: 3}
       propertyPath: cooldownTime
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6428317783600707279, guid: d31cec86b2ed5854d8a4e84ebbe416a4,
+        type: 3}
+      propertyPath: hp
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d31cec86b2ed5854d8a4e84ebbe416a4, type: 3}
@@ -5265,6 +5270,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6694489571033776709, guid: 3267f2533fb4816488bf52973e5ac219,
         type: 3}
+    - target: {fileID: 4802360572127991593, guid: 7ad85055173fad049b8e22c6395f2b67,
+        type: 3}
+      propertyPath: printTest
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4802360572127991593, guid: 7ad85055173fad049b8e22c6395f2b67,
         type: 3}
       propertyPath: spawnTime

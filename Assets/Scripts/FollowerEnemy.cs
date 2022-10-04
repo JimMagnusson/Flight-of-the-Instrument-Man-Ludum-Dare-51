@@ -85,10 +85,6 @@ public class FollowerEnemy : MonoBehaviour
     {
         _rotateTowardTarget.SetRotationActive(false);
         _moveTowardTarget.SetMovingActive(false);
-    }
-
-    private void OnDestroy()
-    {
         _sceneSwitcher.OnSwitchSceneEvent -= SceneSwitcherOnOnSwitchSceneEvent;
     }
 }
