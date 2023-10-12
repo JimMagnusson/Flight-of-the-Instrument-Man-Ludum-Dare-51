@@ -1,4 +1,6 @@
 # Flight of the Instrument Man - Ludum Dare 51
+Play here: https://jimmagnusson.itch.io/flight-of-the-instrument-man-bugfix
+
 Ludum Dare 51 Jam entry: https://ldjam.com/events/ludum-dare/51/flight-of-the-instrument-man
 
 Made in 72 hours
