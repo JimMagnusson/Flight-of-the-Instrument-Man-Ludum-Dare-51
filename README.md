@@ -5,7 +5,7 @@ Ludum Dare 51 Jam entry: https://ldjam.com/events/ludum-dare/51/flight-of-the-in
 
 Made in 72 hours
 
-![flight_screenshot](https://github.com/JimMagnusson/Flight-of-the-Instrument-Man-Ludum-Dare-51/assets/50302387/36a2b552-13ef-4a0f-9fee-0dc917a27766)
+![instrument_gif](https://github.com/JimMagnusson/Flight-of-the-Instrument-Man-Ludum-Dare-51/assets/50302387/b9d2d11e-deff-4997-ba88-595d5e3ab3b4)
 
 Made by: 
 
